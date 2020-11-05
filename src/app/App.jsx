@@ -19,7 +19,7 @@ const App = () => {
 	const [pokemonData, setPokemonData] = useState([]);
 
 	useEffect(() => {
-		fetch("/pokemons")
+		fetch("/api/pokemons")
 			.then((res) => res.json())
 			.then((data) => setPokemonData(data));
 	}, []);
