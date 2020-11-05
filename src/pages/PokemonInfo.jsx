@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "../components/Card/Card";
 
 const PokemonInfo = ({ pokemonData, match }) => {
 	const pokemonId = match.params.id;
