@@ -19,9 +19,10 @@ const App = () => {
 	const [pokemonData, setPokemonData] = useState([]);
 
 	useEffect(() => {
-		fetch("/pokemons")
+		fetch("/api/pokemons")
 			.then((res) => res.json())
-			.then((data) => setPokemonData(data));
+			.then((data) => setPokemonData(data))
+			.catch((err) => console.log(err.message));
 	}, []);
 
 	return (
@@ -29,7 +30,7 @@ const App = () => {
 			<Navbar />
 			<Switch>
 				<Route
-					path="/pokemons/:id/:type/:base?"
+					path="/pokemons/:id/:base?"
 					render={(props) => (
 						<PokemonInfo pokemonData={pokemonData} {...props} />
 					)}
