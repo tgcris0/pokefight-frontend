@@ -11,12 +11,21 @@ const sectionStyle = {
 	backgroundImage: `url(${Background})`
   };
 
-const Homepage = () => {
+import Card from "../components/Card/Card";
+import { Box } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
+
+const Homepage = ({ pokemonData }) => {
+	const shuffled = pokemonData.sort(() => 0.5 - Math.random());
+	const selected = shuffled.slice(0, 3);
+
 	return (
 		<div>
 		<Button variant="outlined">Change the ARENA</Button>
          <section style={ sectionStyle }>
       </section>
+      
+      
       </div>
 	);
 };
